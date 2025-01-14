@@ -1,0 +1,24 @@
+{
+  "name": "vite-swc-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build:esbuild": "vite build --config vite.config.esbuild.js",
+    "build:swc": "vite build --config vite.config.swc.js",
+    "preview": "vite preview",
+    "build:esbuild:local": "NODE_ENV=local npm run build:esbuild",
+    "build:swc:prod": "NODE_ENV=production npm run build:swc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vite": "^6.0.7"
+  }
+}
