@@ -2,9 +2,15 @@ import React from "react";
 import _ from "lodash";
 import moment from "moment";
 
-const LargeComponent = () => {
-  const generateLargeArray = (size) => {
-    const result = [];
+type Item = {
+  id: number;
+  name: string;
+  createdAt: string;
+};
+
+const LargeComponent: React.FC = () => {
+  const generateLargeArray = (size: number): Item[] => {
+    const result: Item[] = [];
     for (let i = 0; i < size; i++) {
       result.push({
         id: i,
@@ -16,7 +22,7 @@ const LargeComponent = () => {
   };
 
   const largeArray = generateLargeArray(100000);
-  const groupedArray = _.groupBy(largeArray, (item) => item.id % 10);
+  const groupedData = _.groupBy(largeArray, (item) => item.id % 10);
 
   return (
     <div>
@@ -26,7 +32,7 @@ const LargeComponent = () => {
           <h2>Group {key}</h2>
           {items.map((item) => (
             <div key={item.id}>
-              {item.value} - {item.timestamp}
+              {item.name} - {item.createdAt}
             </div>
           ))}
         </div>
